@@ -1,0 +1,51 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="manage_timetable1">
+  <table width="200" class="table table-bordered table-dark">
+    <tr><th colspan="5">FILTER</th></tr>
+    <tr>
+    <th><h3>STAFF</h3></th>
+    <td>
+    <select name="filter">
+    {% for j in staff %}  
+    <option value="{{ j.fname }}{{ j.mname }}{{ j.lname }}">{{ j.fname }}{{ j.mname }}{{ j.lname }}</option>
+    {% endfor %}
+    </select></td>
+    <td colspan="2">
+    <input type="submit" value="filter">
+    </td>
+    <td>
+    <a href="{% url 'manage_timetable' %}">Reset</a>
+    </td>
+    </tr>
+    <tr>
+      <th scope="row">SUBJECT</th>
+      <th scope="row">DAY</th>
+      <th scope="row">TIME</th>
+      <th scope="row">STAFF</th>
+      <th scope="row">UPDATE</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td><label>
+        <p>{{ i.sid.subjects }}</p>
+      </label></td>
+      <td><label>
+        <p> {{ i.day }} </p>
+      </label></td> 
+        <td><label>
+          <p> {{ i.time }} </p>
+        </label></td>
+      <td><label>
+        <p> {{ i.staff.fname }}{{ i.staff.mname }}{{ i.staff.lname }} </p>
+      </label></td>
+      <td>
+      <a href="{% url 'delete_timetable' id=i.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    
+  </table>
+</form>
+</body>
+{% endblock %}

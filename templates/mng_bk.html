@@ -1,0 +1,31 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'add_bk' %}">
+  <table width="200"  class="table table-bordered table-dark">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">BOOK</th>
+      <th scope="col">AUTHOR</th>
+      <th scope="col"></th>
+    </tr>
+    <tr>
+      {% for i in val %}
+      <tr>
+        <td>&nbsp;{{ i.name }}</td>
+        <td>&nbsp;{{ i.book }} <br> <a href="{{i.book.url}}">Download</a> </td>
+        <td>&nbsp;{{ i.author }}</td>
+        <td>
+        <p><a href="{% url 'delete_bk' id=i.id %}">Delete</a></p></td>
+      </tr>
+      {% endfor %}
+      
+    </tr>
+  </table>
+  <p>
+    <label></label>
+    <input name="Submit" type="submit" value="Add New" />
+  </p>
+</form>
+</body>
+{% endblock %}

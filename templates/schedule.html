@@ -1,0 +1,77 @@
+
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="schedule1">
+  <table width="200" class="table table-bordered table-dark">
+    <tr>
+      <th scope="row">SUBJECT</th>
+      <td><label>
+        <select name="select" id ="sub">
+          {% for i in subject %}
+          <option value="{{i.id}}">{{i.subjects}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">STAFF</th>
+      <td><label>
+        <select name="select1" id="staff">
+
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DATE</th>
+      <td><label>
+        <input type="date" name="textfield" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">TIME</th>
+      <td><label>
+        <input type="time" name="textfield2" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input name="Submit" type="submit" value="Schedule" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    $("#sub").change(function(){
+    var sd;
+     sd = $(this).val();
+$.ajax(
+    {
+        type:"GET",
+        url: "/searchstaff",
+        data:{
+                 sub: sd,
+        },
+        success: function( data )
+        {
+        var tab;
+        tab='<option>Select</option>';
+        for (var i=0, l=data.res.length; i<l; i++)
+        {
+        tab=tab+'<option value="'+data.res[i].id+'">'+data.res[i].name+'</option>'
+        }
+
+$('#staff').empty();
+$('#staff').append(tab);
+        }
+     })
+
+});
+
+</script>
+{% endblock %}

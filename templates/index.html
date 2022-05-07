@@ -1,0 +1,455 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sync is a landing page HTML template built with Bootstrap 4 for presenting mobile apps to the online audience and for getting visitors to become users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Webpage Title -->
+    <title>Academic monitor</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/swiper.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet">
+	<link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{% static 'assets/images/favicon.png' %}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Sync</a> -->
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{% url 'index' %}"><h3>Academia</h3></a> 
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#description">DESCRIPTION <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                    </li>
+              
+
+                    <!-- Dropdown Menu --> 
+                    {% if user.is_authenticated %}
+         
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'admin_home' %}"><span class="item-text">ADMIN HOME</span></a>
+                        </div>
+                    </li>
+                    <!-- end of dropdown menu -->
+                    {% endif %}
+                </ul>
+                {% if user.is_authenticated %}
+                <span class="nav-item">
+                    <a class="btn-outline-sm page-scroll" href="{% url 'logout' %}">Logout</a>
+                </span>
+                {% else %}
+                <span class="nav-item">
+                    <a class="btn-outline-sm page-scroll" href="{% url 'login' %}">Login</a>
+                </span>
+                {% endif %}
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h1>Download The App Now</h1>
+                        <p class="p-large p-heading">Get your academic endevours into a compact focused and managable format.</p>
+    
+                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>DOWNLOAD</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{% static 'assets/images/book1.png' %}" alt="alternative" id = "main-image">
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+        <div class="deco-white-circle-1">
+            <img src="{% static 'assets/images/decorative-white-circle.svg' %}" alt="alternative">
+        </div> <!-- end of deco-white-circle-1 -->
+        <div class="deco-white-circle-2">
+            <img src="{% static 'assets/images/decorative-white-circle.svg' %}" alt="alternative">
+        </div> <!-- end of deco-white-circle-2 -->
+        <div class="deco-blue-circle">
+            <img src="{% static 'assets/images/decorative-blue-circle.svg' %}" alt="alternative">
+        </div> <!-- end of deco-blue-circle -->
+        <div class="deco-yellow-circle">
+            <img src="{% static 'assets/images/decorative-yellow-circle.svg' %}" alt="alternative">
+        </div> <!-- end of deco-yellow-circle -->
+        <div class="deco-green-diamond">
+            <img src="{% static 'assets/images/decorative-green-diamond.svg' %}" alt="alternative">
+        </div> <!-- end of deco-yellow-circle -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Small Features -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Student Attendace</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image green">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Customisability</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image red">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Organise</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image yellow">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Chat</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image blue">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Get Things Under Controll</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of small features -->
+
+
+    <!-- Description 1 -->
+    <div id="description" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{% static 'assets/images/book2.png' %}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>Organize Your Time And Start Getting Results</h2>
+                        <p>Academic monitor helps you to organise academic events</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Analyse and evaluate students current status and productivity</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Begin monitoring your day to day academic routine</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">See Academic reports and progress</div>
+                            </li>
+                        </ul>
+                        <a class="btn-solid-reg popup-with-move-anim" href="#description-1-details-lightbox">DOWNLOAD</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of description 1 -->
+ 
+    
+    <!-- Description 1 Details Lightbox -->
+	<!-- Details Lightbox -->
+	<div id="description-1-details-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+			<div class="col-lg-8">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'assets/images/book2.png' %}"  alt="alternative">
+                </div> <!-- end of image-container -->
+			</div>
+			<div class="col-lg-4">
+                <h3>Goals Setting</h3>
+				<hr>
+                <p>The app can easily help you track your personal development evolution if you take the time to set it up.</p>
+                <h4>User Feedback</h4>
+                <p>This is a great app which can help you save time and make your live easier. And it will help improve your productivity.</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="far fa-check-square"></i><div class="media-body">Splash screen panel</div>
+                    </li>
+                    <li class="media">
+                        <i class="far fa-check-square"></i><div class="media-body">Statistics graph report</div>
+                    </li>
+                    <li class="media">
+                        <i class="far fa-check-square"></i><div class="media-body">Events calendar layout</div>
+                    </li>
+                    <li class="media">
+                        <i class="far fa-check-square"></i><div class="media-body">Location details screen</div>
+                    </li>
+                    <li class="media">
+                        <i class="far fa-check-square"></i><div class="media-body">Onboarding steps interface</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close page-scroll" href="#download">DOWNLOAD</a> <button class="btn-outline-reg mfp-close as-button" type="button">BACK</button>
+			</div>
+		</div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of details lightbox -->
+    <!-- end of description 1 details lightbox -->
+
+
+
+   
+    <!-- Features -->
+    <div id="features" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Special Features</h2>
+                    <p class="p-heading">Academic monitor is fully open source and free. Unlike others we are still customisable with a python django codebase</p>
+                </div> <!-- end of div -->
+            </div> <!-- end of div -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <ul class="list-unstyled li-space-lg first">
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-users fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Community</h4>
+                                <p>A community of developers who are ready to clear doubts and crush bugs</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x green"></i>
+                                <i class="fas fa-code fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Open Source</h4>
+                                <p>Academic monitor is full open source and customisable</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x red"></i>
+                                <i class="fas fa-cog fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Easy Setup</h4>
+                                <p>Quick and easy cross platform setup and deployment</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="{% static 'asstes/images/features-app.jpg' %}" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x yellow"></i>
+                                <i class="fas fa-comments fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Chat</h4>
+                                <p>Teachers and Students can chat with eachother, plan their lessions & clear doubts</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x blue"></i>
+                                <i class="fas fa-rocket fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Progess reports</h4>
+                                <p>Updated progress reports of students</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-download fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Self Contained</h4>
+                                <p>Your data and your privacy is contained within your own personalised ecosystem</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of features -->
+
+
+   
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h5>About Academic monitor</h5>
+                        <p class="p-small">Academic monior is a fully opensource platform built by people for the people</p>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col second">
+                        <h5>Contact Info</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a href="#your-link">adithyanjothir@gmail.com</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-phone-alt"></i>
+                                <div class="media-body"><a href="#your-link">+7907009424</a></div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col third">
+                        <h5>Value Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Article Details</a></li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                
+                    <div class="footer-col fifth">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="{% static 'asstes/js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{% static 'asstes/js/popper.min.js' %}"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="{% static 'asstes/js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script src="{% static 'asstes/js/jquery.easing.min.js' %}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{% static 'asstes/js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{% static 'asstes/js/jquery.magnific-popup.js' %}"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="{% static 'asstes/js/validator.min.js' %}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="{% static 'asstes/js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'add_staff' %}">
+  <table width="200" class="table table-bordered table-dark">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">DOB</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">COURSE</th>
+      <th scope="col">PLACE</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">EMAIL</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{ i.fname }}{{ i.mname }}{{ i.lname }}&nbsp;</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.course_id.course }}</td>
+      <td>&nbsp;{{ i.place }}</td>
+      <td>&nbsp;{{ i.phone }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="allocate1">
+  <table width="200" class="table table-bordered table-dark">
+    <tr>
+      <th scope="row">SUBJECT</th>
+      <td><label>
+        <select name="select">
+        {% for i in subject %}
+          <option value="{{ i.id }}">{{ i.subjects }}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">TEACHER</th>
+      <td><label>
+        <select name="select2">
+          {% for i in staff %}
+          <option value="{{ i.id }}">{{ i.fname}} {{ i.lname }}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

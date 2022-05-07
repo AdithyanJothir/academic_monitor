@@ -1,0 +1,88 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'edit_student1' %}">
+  <table width="200" class="table table-bordered table-dark">
+    <tr>
+      <th scope="row">FIRST NAME </th>
+      <td><label>
+        <input type="text" name="textfield" value = "{{ id.fname }}" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">MIDDLE NAME </th>
+      <td><label>
+        <input type="text" name="textfield2" value = "{{ id.mname }}" pattern="[A-Z a-z.]{1,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">LAST NAME </th>
+      <td><label>
+        <input type="text" name="textfield3" value = "{{ id.lname }}" required pattern="[A-Z a-z.]{1,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DOB</th>
+      <td><label>
+        <input type="date" name="textfield4" value = "{{ id.dob }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER</th>
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" {% if id.gender == 'male' %} checked {% endif %} />
+        male</label>
+      <label>
+      <input name="radiobutton" type="radio" value="female" {% if id.gender == 'female' %} checked {% endif %} />
+      female </label></td>
+    </tr>
+    <tr>
+      <th scope="row">COURSE</th>
+      <td><label>
+        <select name="select">
+          {% for i in courses %}
+          <option value="{{ i.id }}">{{ i.course }}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PLACE</th>
+      <td><label>
+        <input type="text" name="textfield6" value = "{{ id.place }}" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">POST</th>
+      <td><label>
+        <input type="text" name="textfield7" value = "{{ id.post }}" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PIN</th>
+      <td><label>
+        <input type="number" name="textfield8" value="{{ id.pin }}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE</th>
+      <td><label>
+        <input type="text" name="textfield9" value="{{ id.phone }}" required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><label>
+        <input type="text" name="textfield10" value="{{ id.email }}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Update" value="Update" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_subject1">
+  <table width="200" class="table table-bordered table-dark">
+    <tr>
+      <th scope="row">COURSE</th>
+      <td><label>
+        <select name="select" required>
+          <option value="">select</option>
+          {% for i in data %}
+          <option value="{{i.id}}">{{i.course}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">SUBJECT</th>
+      <td><label>
+        <input type="text" name="textfield" required pattern="[A-Z a-z.]{2,}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">SEMESTER</th>
+      <td><label>
+        <input type="text" name="textfield1" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">DESCRIPTION</th>
+      <td><label>
+        <textarea name="textarea" required></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

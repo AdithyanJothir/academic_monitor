@@ -1,0 +1,70 @@
+body {
+    background-color: #333;
+    font: 12px/1.4 "Gotham SSm A","Helvetica Neue",Helvetica,Arial;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .tile {
+    background: #262626 linear-gradient(to left, #db3839 50%, #262626 50%) repeat scroll 0 0 / 200% 100%;
+    border: 1px solid #1c1e22;
+    color: #FFF;
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-position 0.1s ease 0s;
+    vertical-align: top;
+  }
+    
+.tile:hover {
+      background-position: 100% 0;
+      color: #FFFFFF;
+      cursor: pointer;
+      -webkit-transform: scale(0.97) perspective(400px);
+      -moz-transform: scale(0.97) perspective(400px);
+      -ms-transform: scale(0.97) perspective(400px);
+      transform: scale(0.97) perspective(400px);
+}
+  
+  .tile > span {
+    bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    left: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 4px;
+    position: absolute;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .icon-tile {
+    height: 150px;
+    width: 245px;
+  }
+  
+    .icon-tile i {
+      font-size: 80px;
+    }
+  
+  .imvu-tile {
+    height: 93px;
+    width: 113x;
+  }
+  
+  .youtube-tile {
+    height: 130px;
+  }
+  
+  
+  
+  
+  
+  
